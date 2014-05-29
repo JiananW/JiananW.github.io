@@ -15,7 +15,7 @@
    limitations under the License.
 */
 
-var debugmode = true;
+var debugmode = false;
 
 var states = Object.freeze({
    SplashScreen: 0,
@@ -168,9 +168,9 @@ function gameloop() {
    var origwidth = 34.0;
    var origheight = 24.0;
    
-   var boxwidth = origwidth - (Math.sin(Math.abs(rotation) / 90) * 8)-18;
-   var boxheight = (origheight + box.height) / 2-18;
-   var boxleft = ((box.width - boxwidth) / 2) + box.left;  //change the box bounding to make the bird sleeky
+   var boxwidth = origwidth - (Math.sin(Math.abs(rotation) / 90) * 8);
+   var boxheight = (origheight + box.height) / 2;
+   var boxleft = ((box.width - boxwidth) / 2) + box.left;
    var boxtop = ((box.height - boxheight) / 2) + box.top;
    var boxright = boxleft + boxwidth;
    var boxbottom = boxtop + boxheight;
@@ -205,10 +205,10 @@ function gameloop() {
    var nextpipe = pipes[0];
    var nextpipeupper = nextpipe.children(".pipe_upper");
    
-   var pipetop = nextpipeupper.offset().top + nextpipeupper.height();
+   var pipetop = nextpipeupper.offset().top + nextpipeupper.height() +5;
    var pipeleft = nextpipeupper.offset().left - 2; // for some reason it starts at the inner pipes offset, not the outer pipes.
    var piperight = pipeleft + pipewidth ;
-   var pipebottom = pipetop + pipeheight ;
+   var pipebottom = pipetop + pipeheight  -5;
    
    if(debugmode)
    {
