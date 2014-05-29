@@ -205,10 +205,10 @@ function gameloop() {
    var nextpipe = pipes[0];
    var nextpipeupper = nextpipe.children(".pipe_upper");
    
-   var pipetop = nextpipeupper.offset().top + nextpipeupper.height();
+   var pipetop = nextpipeupper.offset().top + nextpipeupper.height() +5;
    var pipeleft = nextpipeupper.offset().left - 2; // for some reason it starts at the inner pipes offset, not the outer pipes.
-   var piperight = pipeleft + pipewidth;
-   var pipebottom = pipetop + pipeheight;
+   var piperight = pipeleft + pipewidth ;
+   var pipebottom = pipetop + pipeheight  -5;
    
    if(debugmode)
    {
