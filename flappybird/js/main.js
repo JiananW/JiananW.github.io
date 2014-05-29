@@ -168,8 +168,8 @@ function gameloop() {
    var origwidth = 34.0;
    var origheight = 24.0;
    
-   var boxwidth = origwidth - (Math.sin(Math.abs(rotation) / 90) * 8);
-   var boxheight = (origheight + box.height) / 2;
+   var boxwidth = origwidth - (Math.sin(Math.abs(rotation) / 90) * 8)-15;
+   var boxheight = (origheight + box.height) / 2-15;
    var boxleft = ((box.width - boxwidth) / 2) + box.left;
    var boxtop = ((box.height - boxheight) / 2) + box.top;
    var boxright = boxleft + boxwidth;
@@ -205,10 +205,10 @@ function gameloop() {
    var nextpipe = pipes[0];
    var nextpipeupper = nextpipe.children(".pipe_upper");
    
-   var pipetop = nextpipeupper.offset().top + nextpipeupper.height() +5;
+   var pipetop = nextpipeupper.offset().top + nextpipeupper.height();
    var pipeleft = nextpipeupper.offset().left - 2; // for some reason it starts at the inner pipes offset, not the outer pipes.
    var piperight = pipeleft + pipewidth ;
-   var pipebottom = pipetop + pipeheight  -5;
+   var pipebottom = pipetop + pipeheight;
    
    if(debugmode)
    {
