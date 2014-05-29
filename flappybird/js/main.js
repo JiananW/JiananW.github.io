@@ -25,7 +25,7 @@ var states = Object.freeze({
 
 var currentstate;
 
-var gravity = 0.20;
+var gravity = 0.25;
 var velocity = 0;
 var position = 180;
 var rotation = 0;
@@ -147,8 +147,8 @@ function startGame()
 function updatePlayer(player)
 {
    //rotation
-   rotation = Math.min((velocity / 10) * 90, 90);
-   
+   rotation =Math.atan(velocity / -jump)*100/Math.PI;// fix the head is heavy"
+   //console.log(velocity+" "+rotation);
    //apply rotation and position
    $(player).css({ rotate: rotation, top: position });
 }
